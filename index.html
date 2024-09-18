@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,400i,700" rel="stylesheet">
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
     <style>
         /* CSS Reset */
         * {
@@ -108,6 +110,14 @@
             z-index: -1;
         }
 
+        /* Accessibility: Reduce motion for users who prefer reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+
         @media (max-width: 600px) {
             .contact-info {
                 flex-direction: column;
@@ -118,70 +128,119 @@
                 margin: 5px 0;
             }
         }
+
+        /* Scroll to Top Button Styles */
+        #scrollToTop {
+            display: none; /* Hidden by default */
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            z-index: 99;
+            font-size: 18px;
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            padding: 15px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+
+        #scrollToTop:hover {
+            background-color: var(--accent-color);
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <header>
+        <header data-aos="fade-down">
             <h1>Casey Spencer</h1>
             <div class="contact-info">
-                <div><strong>Phone:</strong> 480-772-2242</div>
+                <div><strong>Phone:</strong> <a href="tel:4807722242">480-772-2242</a></div>
                 <div><strong>Email:</strong> <a href="mailto:casey.spencer.az@gmail.com">casey.spencer.az@gmail.com</a></div>
-                <div><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/caseyspencer" target="_blank">linkedin.com/in/caseyspencer</a></div>
+                <div><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/caseyspencer" target="_blank" rel="noopener">linkedin.com/in/caseyspencer</a></div>
             </div>
         </header>
-        <section>
-            <h2>Summary</h2>
-            <div class="section-content">
-                <p>Dedicated and innovative Computer Systems Engineering student with experience in software development, IT support, and project coordination. Proficient in C, C#, Java, and audiovisual systems. Seeking opportunities to leverage my skills in delivering exceptional technical solutions upon graduation in December 2024.</p>
-            </div>
-        </section>
-        <section>
-            <h2>Education</h2>
-            <div class="section-content">
-                <p><strong>B.S. in Computer Systems Engineering</strong> – Arizona State University, expected December 2024</p>
-            </div>
-        </section>
-        <section>
-            <h2>Technical Skills</h2>
-            <div class="section-content">
-                <p><strong>Programming Languages:</strong> C, C#, Java, Bash, SQL</p>
-                <p><strong>Technologies:</strong> Git, AWS, RESTful APIs, Azure, Unity</p>
-                <p><strong>Systems and Tools:</strong> Ghost Suite Solutions, Windows, macOS, Linux</p>
-                <p><strong>Other Skills:</strong> Audiovisual systems, desktop software and hardware support</p>
-            </div>
-        </section>
-        <section>
-            <h2>Professional Experience</h2>
-            <div class="section-content">
-                <p><strong>Chandler-Gilbert Community College, Chandler, AZ</strong> – Technology Support Technician | 05/2019 – 03/2024</p>
-                <ul>
-                    <li>Created bash scripts to automate tasks, saving several hours of weekly manual labor.</li>
-                    <li>Developed and deployed jobs within Ghost Suite Solutions for creating and maintaining computers.</li>
-                    <li>Maintained asset inventory, documentation, storage, and security of equipment.</li>
-                    <li>Assisted users with hardware, software applications, printing, scanning/copying, and digital imaging devices.</li>
-                    <li>Authored new user guides and improved existing procedures.</li>
-                </ul>
-            </div>
-        </section>
-        <section>
-            <h2>Projects</h2>
-            <div class="section-content">
-                <p><strong>Toyz Electronics - Game Developer for Online Learning Platform</strong></p>
-                <ul>
-                    <li>Developed and tested platform login systems across multiple platforms, including WebGL and Universal Windows Platform.</li>
-                    <li>Collaborated on the implementation of a data pipeline to PlayFab for storing player data and user-generated content linked to the Microsoft Store.</li>
-                    <li>Utilized C# scripts in Unity to implement core game functionality, including player interactions and user-generated content management for the learning platform.</li>
-                </ul>
-            </div>
-        </section>
-        <section>
-            <h2>Activities</h2>
-            <div class="section-content">
-                <p><strong>Chandler-Gilbert Community College Esports Club</strong> – Esports Coordinator | 08/2018 – 08/2019</p>
-                <p>Created a paid full-time position sponsored by the school by coordinating students into teams with weekly practice schedules and organizing tournaments.</p>
-            </div>
-        </section>
+        <main>
+            <section data-aos="fade-up">
+                <h2>Summary</h2>
+                <div class="section-content">
+                    <p>Dedicated and innovative Computer Systems Engineering student with experience in software development, IT support, and project coordination. Proficient in C, C#, Java, and audiovisual systems. Seeking opportunities to leverage my skills in delivering exceptional technical solutions upon graduation in December 2024.</p>
+                </div>
+            </section>
+            <section data-aos="fade-up" data-aos-delay="100">
+                <h2>Education</h2>
+                <div class="section-content">
+                    <p><strong>B.S. in Computer Systems Engineering</strong> – Arizona State University, expected December 2024</p>
+                </div>
+            </section>
+            <section data-aos="fade-up" data-aos-delay="200">
+                <h2>Technical Skills</h2>
+                <div class="section-content">
+                    <p><strong>Programming Languages:</strong> C, C#, Java, Bash, SQL</p>
+                    <p><strong>Technologies:</strong> Git, AWS, RESTful APIs, Azure, Unity</p>
+                    <p><strong>Systems and Tools:</strong> Ghost Suite Solutions, Windows, macOS, Linux</p>
+                    <p><strong>Other Skills:</strong> Audiovisual systems, desktop software and hardware support</p>
+                </div>
+            </section>
+            <section data-aos="fade-up" data-aos-delay="300">
+                <h2>Professional Experience</h2>
+                <div class="section-content">
+                    <p><strong>Chandler-Gilbert Community College, Chandler, AZ</strong> – Technology Support Technician | 05/2019 – 03/2024</p>
+                    <ul>
+                        <li>Created bash scripts to automate tasks, saving several hours of weekly manual labor.</li>
+                        <li>Developed and deployed jobs within Ghost Suite Solutions for creating and maintaining computers.</li>
+                        <li>Maintained asset inventory, documentation, storage, and security of equipment.</li>
+                        <li>Assisted users with hardware, software applications, printing, scanning/copying, and digital imaging devices.</li>
+                        <li>Authored new user guides and improved existing procedures.</li>
+                    </ul>
+                </div>
+            </section>
+            <section data-aos="fade-up" data-aos-delay="400">
+                <h2>Projects</h2>
+                <div class="section-content">
+                    <p><strong>Toyz Electronics - Game Developer for Online Learning Platform</strong></p>
+                    <ul>
+                        <li>Developed and tested platform login systems across multiple platforms, including WebGL and Universal Windows Platform.</li>
+                        <li>Collaborated on the implementation of a data pipeline to PlayFab for storing player data and user-generated content linked to the Microsoft Store.</li>
+                        <li>Utilized C# scripts in Unity to implement core game functionality, including player interactions and user-generated content management for the learning platform.</li>
+                    </ul>
+                </div>
+            </section>
+            <section data-aos="fade-up" data-aos-delay="500">
+                <h2>Activities</h2>
+                <div class="section-content">
+                    <p><strong>Chandler-Gilbert Community College Esports Club</strong> – Esports Coordinator | 08/2018 – 08/2019</p>
+                    <p>Created a paid full-time position sponsored by the school by coordinating students into teams with weekly practice schedules and organizing tournaments.</p>
+                </div>
+            </section>
+        </main>
+        <!-- Scroll to Top Button -->
+        <button id="scrollToTop" title="Go to top" aria-label="Scroll to top">&#8679;</button>
     </div>
+    <!-- AOS JS and Initialization -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 600, // Animation duration in milliseconds
+            once: true,    // Whether animation should happen only once while scrolling down
+        });
+
+        // Scroll to Top Script
+        // Show the button when the user scrolls down 100px from the top
+        window.onscroll = function() {
+            const scrollToTopBtn = document.getElementById('scrollToTop');
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                scrollToTopBtn.style.display = 'block';
+            } else {
+                scrollToTopBtn.style.display = 'none';
+            }
+        };
+
+        // Scroll to the top when the user clicks the button
+        document.getElementById('scrollToTop').addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
 </body>
 </html>
