@@ -15,10 +15,11 @@
         }
 
         :root {
-            --primary-color: #007BFF;
-            --secondary-color: #333;
-            --background-color: #f4f4f9;
-            --text-color: #333;
+            --primary-color: #00A8E8;
+            --secondary-color: #FFFFFF;
+            --background-color: #1E1E1E;
+            --text-color: #E0E0E0;
+            --accent-color: #00A8E8;
         }
 
         body {
@@ -51,12 +52,16 @@
             justify-content: center;
             flex-wrap: wrap;
             font-size: 1em;
-            color: #666;
+            color: #CCCCCC;
         }
 
         .contact-info a {
-            color: var(--primary-color);
+            color: var(--accent-color);
             text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
         }
 
         .contact-info div {
@@ -84,6 +89,23 @@
 
         ul {
             padding-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        /* Subtle Background Pattern */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://www.transparenttextures.com/patterns/dark-matter.png');
+            opacity: 0.1;
+            z-index: -1;
         }
 
         @media (max-width: 600px) {
